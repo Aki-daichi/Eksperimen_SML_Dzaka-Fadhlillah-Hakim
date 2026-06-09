@@ -41,9 +41,6 @@ def train():
     X_train, X_test, y_train, y_test = load_data()
 
     with mlflow.start_run(run_name="RandomForest-Baseline"):
-        # Aktifkan autolog
-        mlflow.sklearn.autolog()
-
         # Training model
         model = RandomForestClassifier(random_state=42)
         model.fit(X_train, y_train)
@@ -60,6 +57,15 @@ def train():
         print(f"  Precision: {precision:.4f}")
         print(f"  Recall   : {recall:.4f}")
         print(f"  F1 Score : {f1:.4f}")
+
+        # Log metriks manual
+        mlflow.log_metric("accuracy", accuracy)
+        mlflow.log_metric("precision", precision)
+        mlflow.log_metric("recall", recall)
+        mlflow.log_metric("f1_score", f1)
+
+        # Log model secara eksplisit
+        mlflow.sklearn.log_model(model, "model")
 
         # Simpan dan log confusion matrix
         save_confusion_matrix(y_test, y_pred)
