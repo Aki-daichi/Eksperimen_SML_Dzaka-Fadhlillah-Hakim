@@ -1,6 +1,7 @@
-pip install pandas
-pip install numpy
-pip install matplotlib
-pip install seaborn
-pip install scikit-learn
-pip install notebook
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+notebook
+mlflow
