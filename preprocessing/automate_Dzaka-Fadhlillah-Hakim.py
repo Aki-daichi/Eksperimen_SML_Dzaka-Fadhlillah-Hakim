@@ -63,7 +63,7 @@ def save_data(X_train, X_test, y_train, y_test, output_dir='diabetes_preprocessi
 
 def main():
     # Path ke dataset raw
-    filepath = 'diabetes_raw.csv'
+    filepath = '../diabetes_raw.csv'
     
     # Jalankan pipeline preprocessing
     df = load_data(filepath)
