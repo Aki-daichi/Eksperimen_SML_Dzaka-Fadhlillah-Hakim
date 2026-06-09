@@ -1,0 +1,4 @@
+echo "__pycache__/" > .gitignore
+echo "*.pyc" >> .gitignore
+echo ".ipynb_checkpoints/" >> .gitignore
+echo "*.egg-info/" >> .gitignore
